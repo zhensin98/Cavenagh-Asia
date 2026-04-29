@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #0B1426;
+  color: #F0F4F8;
+  margin: 0;
+  padding: 0;
+}
+
+/* Thin custom scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0B1426; }
+::-webkit-scrollbar-thumb { background: #1E3055; border-radius: 2px; }
+
+/* Prevent iOS tap highlight */
+button { -webkit-tap-highlight-color: transparent; }
