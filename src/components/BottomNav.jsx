@@ -15,7 +15,7 @@ export default function BottomNav({ active, onChange }) {
           <button
             key={id}
             onClick={() => onChange(id)}
-            className={`flex-1 flex flex-col items-center justify-center gap-1 py-3 transition-colors duration-150 ${
+            className={`relative flex-1 flex flex-col items-center justify-center gap-1 py-3 transition-colors duration-150 ${
               isActive ? 'text-[#C9A84C]' : 'text-[#8B9AB5] hover:text-white'
             }`}
           >

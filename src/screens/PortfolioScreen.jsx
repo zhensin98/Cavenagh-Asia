@@ -162,9 +162,9 @@ function MiniDonut({ title, groups, meta, total, onSegmentClick }) {
       const { sectors, cx, cy, outerRadius } = pieProps
       if (!sectors?.length || cx == null || cy == null) return null
 
-      const ER    = outerRadius + 4   // line exits arc here
-      const SPINE = outerRadius + 14  // vertical spine x-distance from centre
-      const LX    = outerRadius + 26  // label text x-distance from centre
+      const ER    = outerRadius + 6
+      const SPINE = outerRadius + 18
+      const LX    = outerRadius + 32
 
       // Place each label at the y-position matching its segment's midAngle
       // so labels visually follow the pie, then deconflict to prevent overlap.
@@ -236,15 +236,15 @@ function MiniDonut({ title, groups, meta, total, onSegmentClick }) {
         {title}
       </p>
       {/* [&_svg]:overflow-visible lets labels extend beyond SVG bounds */}
-      <div className="relative h-72 [&_svg]:overflow-visible">
+      <div className="relative h-64 [&_svg]:overflow-visible">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart margin={{ top: 6, right: 6, bottom: 6, left: 6 }}>
             <Pie
               data={pieData}
               cx="50%"
               cy="50%"
-              innerRadius={68}
-              outerRadius={96}
+              innerRadius={62}
+              outerRadius={88}
               paddingAngle={2}
               dataKey="value"
               stroke="none"
@@ -403,8 +403,8 @@ export default function PortfolioScreen({ assets, llmUsed }) {
         </div>
       </div>
 
-      {/* ── Side-by-side donuts ── */}
-      <div className="px-4 grid grid-cols-2 gap-3 mb-5">
+      {/* ── Stacked donuts ── */}
+      <div className="px-4 space-y-3 mb-5">
         <MiniDonut
           title="By Source"
           groups={sourceGroups}
