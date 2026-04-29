@@ -5,7 +5,7 @@ import PreciousMetalsForm from './PreciousMetalsForm'
 import RealEstateForm from './RealEstateForm'
 
 // Demo assets from mock statement blueprints — all converted to SGD for clean pie chart display
-const DEMO_ASSETS = [
+export const DEMO_ASSETS = [
   // Private Bank — Meridian Private Bank (SG)
   { asset_type: 'SAVINGS',       institution: 'Meridian Private Bank',  description: 'SGD Current Account',           amount: 320000,  currency: 'SGD' },
   { asset_type: 'FIXED_DEPOSIT', institution: 'Meridian Private Bank',  description: 'SGD Fixed Deposit (6M)',        amount: 500000,  currency: 'SGD' },
@@ -165,18 +165,6 @@ export default function DocumentsScreen({ onAssetsExtracted }) {
         onChange={handleInputChange}
       />
 
-      {/* Demo mode */}
-      <div className="mt-3 flex items-center gap-3">
-        <div className="flex-1 h-px bg-[#1E3055]" />
-        <p className="text-[#8B9AB5] text-xs">or</p>
-        <div className="flex-1 h-px bg-[#1E3055]" />
-      </div>
-      <button
-        onClick={() => onAssetsExtracted(DEMO_ASSETS, true)}
-        className="mt-3 w-full bg-[#1E3055] border border-[#C9A84C]/30 text-[#C9A84C] font-semibold text-sm py-3 rounded-xl hover:bg-[#C9A84C]/10 transition-colors"
-      >
-        Load Demo Portfolio
-      </button>
 
       {/* Status */}
       {status === 'uploading' && (

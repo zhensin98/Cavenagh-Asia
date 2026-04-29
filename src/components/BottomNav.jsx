@@ -2,8 +2,8 @@ import { UploadIcon, PieChartIcon, AuditIcon } from './Icons'
 
 const TABS = [
   { id: 'documents', label: 'Documents', Icon: UploadIcon },
-  { id: 'portfolio', label: 'Portfolio',  Icon: PieChartIcon },
-  { id: 'audit',     label: 'Audit',      Icon: AuditIcon },
+  { id: 'portfolio', label: 'Portfolio', Icon: PieChartIcon },
+  { id: 'audit',     label: 'Audit',     Icon: AuditIcon },
 ]
 
 export default function BottomNav({ active, onChange }) {

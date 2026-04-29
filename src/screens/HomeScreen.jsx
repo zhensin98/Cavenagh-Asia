@@ -1,9 +1,12 @@
 import { LockIcon, InfoIcon } from '../components/Icons'
 import logoSrc from '../assets/logo.png'
 
-export default function HomeScreen({ onRunAudit, error }) {
+export default function HomeScreen({ onEnter }) {
   return (
-    <div className="min-h-screen bg-[#0B1426] flex flex-col items-center justify-center px-6 py-12">
+    <div
+      className="min-h-screen bg-[#0B1426] flex flex-col items-center justify-center px-6 py-12 cursor-pointer select-none"
+      onClick={onEnter}
+    >
       <div className="w-full max-w-sm">
 
         {/* Logo mark */}
@@ -50,27 +53,14 @@ export default function HomeScreen({ onRunAudit, error }) {
           </div>
         </div>
 
-        {/* CTA Button */}
-        <button
-          onClick={onRunAudit}
-          className="w-full bg-[#C9A84C] hover:bg-[#DDB95E] active:bg-[#B8943E] text-[#0B1426] font-semibold py-4 rounded-2xl transition-colors duration-150 text-sm tracking-wide shadow-lg"
-        >
-          Run Local Audit
-        </button>
-
-        {error && (
-          <div className="mt-4 bg-red-500/10 border border-red-500/30 rounded-xl px-4 py-3">
-            <p className="text-red-400 text-xs leading-relaxed">{error}</p>
-            <p className="text-red-400/60 text-xs mt-1">
-              Make sure the Python server is running on port 8000.
-            </p>
-          </div>
-        )}
-
         {/* Footer */}
         <p className="text-[#8B9AB5] text-xs text-center mt-8 leading-relaxed opacity-60">
           Audit observations based on data provided.<br />
           Consult a licensed adviser before making financial decisions.
+        </p>
+
+        <p className="text-[#C9A84C] text-xs text-center mt-6 animate-pulse opacity-60 tracking-widest uppercase">
+          Tap anywhere to enter
         </p>
       </div>
     </div>
